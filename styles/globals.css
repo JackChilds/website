@@ -1,28 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .text-gradient {
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-
-
-html, body {
-  margin: 0;
-  padding:0;
-}
-
-.text-huge {
-  font-size: 15rem;
-}
-@media (max-width: 720px) {
-  .text-huge {
-    font-size: 25vw;
-  }
+::selection {
+  background: #00FFE5;
+  color: black;
 }

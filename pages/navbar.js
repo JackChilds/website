@@ -1,20 +1,98 @@
-import Link from 'next/link'
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import React, { Component } from 'react';
 
-function NavLink(props) {
+function NavItem(props) {
+    const classNames = props.isMenu ? 
+        'btn btn-ghost text-mono text-xl my-2 w-full' : 
+        'btn btn-ghost mx-2 text-mono';
+
     return (
-        <a href={props.href} className="font-sans p-1 text-md font-light rounded-md hover:text-sky-600  duration-75">
-            {props.text.toUpperCase()}
-        </a>
+<>
+    <a className={classNames} href={props.href}>
+        { props.text }
+    </a>
+    { props.isMenu ? ( <br /> ) : null }
+</>
     )
 }
 
-export default function navbar(props) {
+function NavEls(props) {
     return (
-        <div className="pr-4 mb-4 font-sans flex justify-center border-b-2 border-b-gray-200 dark:border-b-gray-700 gap-4">
-            <NavLink href="/" text="Home" />
-            <NavLink href="/about" text="About" />
-            <NavLink href="/projects" text="Projects" />
-            <NavLink href="/contact" text="Contact" />
+    <>
+        <NavItem text="About" href="#" isMenu={props.isMenu} />
+        <NavItem text="Projects" href="#" isMenu={props.isMenu} />
+        <NavItem text="Contact" href="#" isMenu={props.isMenu} />
+    </>
+    )
+}
+
+class DropdownMenu extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isOpen: false,
+            isFirstTime: true
+        };
+    }
+    toggleOpen = (e) => {
+        e.preventDefault();
+
+        console.log(this.state.isOpen)
+
+        if (this.dropdownMenu.contains(e.target) && this.state.isOpen) return
+
+        this.setState({
+            isOpen: ( this.state.isOpen ? false : true ),
+            isFirstTime: false
+        }, () => {
+            if (!this.state.isOpen) {
+                window.setTimeout(() => {
+                    this.dropdown.classList.add('hidden')
+                }, 500)
+            }
+
+            if (this.state.isOpen)
+                document.addEventListener('click', this.toggleOpen);
+            else
+                document.removeEventListener('click', this.toggleOpen);
+        });
+
+    }
+    render() {
+        const classNames = 'p-4 fixed top-4 right-4 bg-base-300 z-50 shadow text-center rounded-lg text-center flex justify-center items-center shadow-sm shadow-gray-700 ';
+        const animations = this.state.isOpen ? 'animate__animated animate__fadeIn animate__faster' : (!this.state.isFirstTime ? 'animate__animated animate__fadeOut animate__faster' : 'hidden');
+
+        return (
+<div ref={(element) => {
+    this.dropdownMenu = element;
+}}>
+    <button className="btn btn-ghost btn-circle text-3xl" onClick={this.toggleOpen}>          
+        <i className="bi bi-list"></i>
+    </button>
+    <div className={classNames + animations} ref={(e) => {
+        this.dropdown = e;
+    }}>
+        <div>
+            <NavEls isMenu={true} />
         </div>
+    </div>
+</div>
+        );
+    }
+}
+
+export default function navbar() {
+    return (
+<div className="navbar bg-base-300 border-b-2 border-base-200 p-8 mb-8 flex justify-around animate__animated animate__fadeInDown">
+    <h1 className="text-2xl font-mono text-base-content">Jack Childs</h1>
+
+    <div className="md:hidden">
+        <DropdownMenu />
+    </div>
+
+    <div className="hidden md:block">
+        <NavEls isMenu={false} />
+    </div>
+</div>
     )
 }

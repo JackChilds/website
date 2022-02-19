@@ -1,8 +1,0 @@
-.hugeText {
-  font-size: 15rem;
-}
-@media (max-width: 720px) {
-  .hugeText {
-    font-size: 25vw;
-  }
-}
