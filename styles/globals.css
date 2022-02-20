@@ -8,3 +8,26 @@
   background: #00FFE5;
   color: black;
 }
+
+.waving-hand {
+  display: inline-block;
+  animation: wavingHand 3.5s infinite;
+}
+
+@keyframes wavingHand {
+  0% {
+    transform: rotate(0deg);
+  }
+  65% {
+    transform: rotate(0deg)
+  }
+  70% {
+    transform: rotate(-10deg)
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  85% {
+    transform: rotate(0deg);
+  }
+}

@@ -13,8 +13,7 @@
     "daisyui": "^2.0.9",
     "next": "12.0.10",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "tailwind-glassmorphism": "^1.0.6"
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",

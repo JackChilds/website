@@ -1,4 +1,3 @@
-import 'bootstrap-icons/font/bootstrap-icons.css';
 import React, { Component } from 'react';
 
 function NavItem(props) {
@@ -8,10 +7,10 @@ function NavItem(props) {
 
     return (
 <>
-    <a className={classNames} href={props.href}>
-        { props.text }
-    </a>
-    { props.isMenu ? ( <br /> ) : null }
+<a className={classNames} href={props.href}>
+    { props.text }
+</a>
+{ props.isMenu ? ( <br /> ) : null }
 </>
     )
 }
@@ -19,7 +18,7 @@ function NavItem(props) {
 function NavEls(props) {
     return (
     <>
-        <NavItem text="About" href="#" isMenu={props.isMenu} />
+        <NavItem text="About" href="#about" isMenu={props.isMenu} />
         <NavItem text="Projects" href="#" isMenu={props.isMenu} />
         <NavItem text="Contact" href="#" isMenu={props.isMenu} />
     </>
@@ -37,7 +36,7 @@ class DropdownMenu extends Component {
     toggleOpen = (e) => {
         e.preventDefault();
 
-        console.log(this.state.isOpen)
+        if (this.dropdownMenu == null) return
 
         if (this.dropdownMenu.contains(e.target) && this.state.isOpen) return
 
@@ -59,7 +58,7 @@ class DropdownMenu extends Component {
 
     }
     render() {
-        const classNames = 'p-4 fixed top-4 right-4 bg-base-300 z-50 shadow text-center rounded-lg text-center flex justify-center items-center shadow-sm shadow-gray-700 ';
+        const classNames = 'p-4 fixed top-4 right-4 bg-base-300 shadow text-center rounded-lg text-center flex justify-center items-center shadow-sm shadow-gray-400 ';
         const animations = this.state.isOpen ? 'animate__animated animate__fadeIn animate__faster' : (!this.state.isFirstTime ? 'animate__animated animate__fadeOut animate__faster' : 'hidden');
 
         return (
