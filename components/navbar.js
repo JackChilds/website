@@ -82,7 +82,7 @@ class DropdownMenu extends Component {
 
 export default function navbar() {
     return (
-<div className="navbar bg-base-300 border-b-2 border-base-200 p-8 mb-8 flex justify-around animate__animated animate__fadeInDown">
+<div className="navbar bg-base-300 border-b-2 border-base-200 p-8 mb-8 flex justify-around animate__animated animate__fadeInDown fixed top-0 left-0 z-999">
     <h1 className="text-2xl font-mono text-base-content">Jack Childs</h1>
 
     <div className="md:hidden">

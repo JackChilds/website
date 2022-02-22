@@ -8,14 +8,17 @@ module.exports = {
       "mono": ['JetBrains Mono', 'monospace']
     },
     extend: {
-      backgroundImage: {
-        'background': "url('/images/background.jpeg')",
+      spacing: {
+        '200px': '200px',
+        '300px': '300px'
+      },
+      zIndex: {
+        '999': 999,
       }
     }
   },
   plugins: [
-    require('daisyui'),
-    require('tailwind-glassmorphism')
+    require('daisyui')
   ],
   daisyui: {
     themes: ['dark']
