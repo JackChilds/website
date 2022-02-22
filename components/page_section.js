@@ -1,7 +1,7 @@
 export default function (props) {
     return (
-<section className="mt-16 p-4 font-mono text-xl w-full flex-none relative py-64">
-    <h2 className="text-4xl sm:text-7xl font-extrabold mb-4 text-center w-screen" 
+<section className="mt-16 font-mono text-xl w-full flex-none relative py-64">
+    <h2 className="text-4xl sm:text-7xl font-extrabold mb-4 text-center" 
     id={ props.name.toLowerCase() }>
         {props.name}
     </h2>
