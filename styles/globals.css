@@ -9,7 +9,8 @@
 }
 
 html, body {
-  background-color: hsl(223, 14%, 10%)
+  /* Need to use important to override default daisy ui settings for dark mode */
+  background-color: hsl(223, 14%, 10%) !important;
 }
 
 ::selection {
