@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import jump from 'jump.js'
 
 function NavItem(props) {
     const classNames = props.isMenu ? 
@@ -7,7 +8,7 @@ function NavItem(props) {
 
     return (
 <>
-<a className={classNames} href={props.href}>
+<a className={classNames} onClick={() => {jump(props.href)}}>
     { props.text }
 </a>
 { props.isMenu ? ( <br /> ) : null }
@@ -18,9 +19,9 @@ function NavItem(props) {
 function NavEls(props) {
     return (
     <>
-        <NavItem text="About" href="#about" isMenu={props.isMenu} />
+        <NavItem text="About" href="#about"  isMenu={props.isMenu} />
         <NavItem text="Projects" href="#projects" isMenu={props.isMenu} />
-        <NavItem text="Contact" href="#" isMenu={props.isMenu} />
+        <NavItem text="Contact" href="#contact" isMenu={props.isMenu} />
     </>
     )
 }

@@ -1,8 +1,7 @@
 export default function (props) {
     return (
-<section className="mt-16 font-mono text-xl w-full flex-none relative py-64">
-    <h2 className="text-4xl sm:text-7xl font-extrabold mb-8 text-center" 
-    id={ props.name.toLowerCase() }>
+<section className="mt-16 font-mono text-xl w-full flex-none relative py-64 px-4" id={ props.name.toLowerCase() }>
+    <h2 className="text-4xl sm:text-7xl font-extrabold mb-8 text-center">
         {props.name}
     </h2>
 
