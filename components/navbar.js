@@ -19,7 +19,7 @@ function NavEls(props) {
     return (
     <>
         <NavItem text="About" href="#about" isMenu={props.isMenu} />
-        <NavItem text="Projects" href="#" isMenu={props.isMenu} />
+        <NavItem text="Projects" href="#projects" isMenu={props.isMenu} />
         <NavItem text="Contact" href="#" isMenu={props.isMenu} />
     </>
     )

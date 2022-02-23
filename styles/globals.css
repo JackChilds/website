@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   background-color: hsl(223, 14%, 10%)
 }
@@ -13,11 +17,17 @@ html, body {
   color: black;
 }
 
+@layer utilities {
+  .text-gradient {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
 .waving-hand {
   display: inline-block;
   animation: wavingHand 3.5s infinite;
 }
-
 @keyframes wavingHand {
   0% {
     transform: rotate(0deg);
