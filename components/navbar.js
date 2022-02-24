@@ -8,9 +8,12 @@ function NavItem(props) {
 
     return (
 <>
-<a className={classNames} onClick={() => {jump(props.href)}}>
+<button className={classNames} onClick={() => {
+    jump(props.href);
+    window.location.hash = props.href.slice(1)
+}}>
     { props.text }
-</a>
+</button>
 { props.isMenu ? ( <br /> ) : null }
 </>
     )

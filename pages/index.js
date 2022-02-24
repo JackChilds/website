@@ -10,7 +10,6 @@ import ProjectCard from '../components/project_card.js'
 
 import 'animate.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import jump from 'jump.js'
 
 export default function Home() {
   return ( 
@@ -41,11 +40,10 @@ export default function Home() {
   <div className="divider"></div>
 
   <Section name="Projects">
+    <p className="p-6 m-3">
+      Here are some of my projects that I have worked on. To view them all, please refer to <a href="https://github.com/JackChilds" className="hover:underline" target="_blank">my GitHub page</a>.
+    </p>
     <div className="pt-8">
-      <p className="p-6 m-3">
-        Here are some of my projects that I have worked on. To view them all, please refer to <a href="https://github.com/JackChilds" className="hover:underline" target="_blank">my GitHub Page</a>.
-      </p>
-
       <ProjectCard projectName="Mock API" href="https://github.com/JackChilds/Mock-API">
         Quickly create Mock API responses and deploy them to Vercel.
       </ProjectCard>

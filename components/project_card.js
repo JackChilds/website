@@ -10,7 +10,7 @@ export default function (props) {
             </p>
 
             <p className="mt-4">
-                <a href={props.href} className="py-1.5 px-3 rounded-full shadow-[0_0_0_1px_rgb(255,255,255)] text-xs hover:bg-white hover:text-black duration-150" target="_blank">
+                <a href={props.href} className="py-1.5 px-3 rounded-full shadow-[0_0_0_1px_rgb(255,255,255)] text-xs hover:bg-white hover:text-black duration-300" target="_blank">
                     View Project
                 </a>
             </p>
