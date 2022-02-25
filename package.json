@@ -1,5 +1,9 @@
 {
   "name": "website",
+  "version": "1.0.0",
+  "description": "A minimal website using next.js and tailwindcss.",
+  "author": "Jack Childs (https://github.com/JackChilds)",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",

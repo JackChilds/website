@@ -7,6 +7,8 @@ import Section from '../components/page_section.js'
 import ParticleBackground from '../components/particle_background.js'
 import Socials from '../components/socials.js'
 import ProjectCard from '../components/project_card.js'
+import ContactEmail from '../components/contact_email.js'
+import Copyright from '../components/copyright.js'
 
 import 'animate.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -32,7 +34,7 @@ export default function Home() {
         Hey there <span className="waving-hand">👋</span>
       </h3>
       <p>
-        I'm a 15 year old, full stack developer from the UK. I make stuff.
+        I&apos;m a 15 year old, full stack developer from the UK. I make stuff.
       </p>
     </Section>
   </div>
@@ -41,7 +43,7 @@ export default function Home() {
 
   <Section name="Projects">
     <p className="p-6 m-3">
-      Here are some of my projects that I have worked on. To view them all, please refer to <a href="https://github.com/JackChilds" className="hover:underline" target="_blank">my GitHub page</a>.
+      Here are some of my projects that I have worked on. To view them all, please refer to <a href="https://github.com/JackChilds" className="hover:underline" target="_blank" rel="noreferrer">my GitHub page</a>.
     </p>
     <div className="pt-8">
       <ProjectCard projectName="Mock API" href="https://github.com/JackChilds/Mock-API">
@@ -62,18 +64,24 @@ export default function Home() {
   <div className="divider"></div>
 
   <Section name="Contact">
-    <p>
-      Reach out to me 
+    <p className="text-center">
+      Reach out to me: <ContactEmail />.
     </p>
 
+  </Section>
+
+  <div className="px-8 mx-4 -mt-48">
     <p className="mt-64 flex justify-center">
         <Socials />
     </p>
-  </Section>
+    
+    <Copyright />
+  </div>
 </div>
 
 <Script src="scripts/particles.min.js" strategy="beforeInteractive" />
 <Script src="scripts/particles_init.js" />
+<Script src="scripts/main.js" />
 </>
   )
 }
