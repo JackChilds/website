@@ -1,14 +1,14 @@
 {
   "name": "website",
   "version": "1.0.0",
-  "description": "A minimal website using next.js and tailwindcss.",
+  "description": "A minimal website made using next.js and tailwindcss.",
   "author": "Jack Childs (https://github.com/JackChilds)",
   "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
     "lint": "next lint"
   },
   "dependencies": {
