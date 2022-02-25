@@ -10,19 +10,19 @@ This is the open source code that powers [my website](https://morcreate.net).
 ## Running locally
 
 1. Clone the repository to your device
-```sh
+```
 gh repo clone JackChilds/website
 ```
 **or**
-```sh
+```
 git clone https://github.com/JackChilds/website
 ```
 2. Navigate to the repository folder
-```sh
+```
 cd website
 ```
 3. Install dependencies and run development server
-```sh
+```
 npm install
 npm run dev
 ```
