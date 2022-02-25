@@ -19,7 +19,6 @@ export default function Home() {
 <div className="animate__animated animate__fadeIn">
   <Head>
     <title>Jack Childs</title>
-    <meta name="theme-color" content="hsl(223, 14%, 10%)"></meta>
   </Head>
 
   <Navbar />
