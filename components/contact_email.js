@@ -4,7 +4,7 @@ export default function ContactEmail() {
     const EMAIL = 'contact@example.com';
 
     const encodeEmail = (e) => {
-        const b = btoa(e);
+        const b = Buffer.from(e).toString('base64');
         let res = [];
         for (let i = 0; i < b.length; i++) {
           res[i] = b.charCodeAt(i).toString();
