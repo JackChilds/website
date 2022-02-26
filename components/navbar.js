@@ -69,7 +69,7 @@ class DropdownMenu extends Component {
 <div ref={(element) => {
     this.dropdownMenu = element;
 }}>
-    <button className="btn btn-ghost btn-circle text-3xl" onClick={this.toggleOpen}>          
+    <button className="btn btn-ghost btn-circle text-3xl" onClick={this.toggleOpen} aria-label="menu">          
         <i className="bi bi-list"></i>
     </button>
     <div className={classNames + animations} ref={(e) => {

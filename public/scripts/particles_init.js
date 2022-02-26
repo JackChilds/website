@@ -15,6 +15,9 @@
             return
         }
 
+        // if the user has prefers-reduced-motion turned on, reduce the speed of the particles
+        const speedFactor = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0.3 : 1
+
         particlesJS("particles-container", {
             particles: {
                 number: {
@@ -47,7 +50,7 @@
                     random: true,
                     anim: {
                         enable: true,
-                        speed: 0.5,
+                        speed: 0.5 * speedFactor,
                         opacity_min: 0,
                         sync: false
                     }
@@ -57,7 +60,7 @@
                     random: true,
                     anim: {
                         enable: false,
-                        speed: 4,
+                        speed: 4 * speedFactor,
                         size_min: 0.3,
                         sync: false
                     }
@@ -71,7 +74,7 @@
                 },
                 move: {
                     enable: true,
-                    speed: 0.8,
+                    speed: 0.8 * speedFactor,
                     direction: "none",
                     random: true,
                     straight: false,
@@ -88,7 +91,8 @@
                 detect_on: "canvas",
                 events: {
                     onhover: {
-                        enable: true,
+                        // only enable the repulse animation when the user doesn't have reduced motion enabled
+                        enable: speedFactor === 1 ? true : false,
                         mode: "repulse"
                     },
                     onclick: {
@@ -98,28 +102,9 @@
                     resize: true
                 },
                 modes: {
-                    grab: {
-                        distance: 400,
-                        line_linked: {
-                            opacity: 1
-                        }
-                    },
-                    bubble: {
-                        distance: 250,
-                        size: 0,
-                        duration: 2,
-                        opacity: 0,
-                        speed: 3
-                    },
                     repulse: {
                         distance: 50,
                         duration: 0.2
-                    },
-                    push: {
-                        particles_nb: 4
-                    },
-                    remove: {
-                        particles_nb: 2
                     }
                 }
             },
