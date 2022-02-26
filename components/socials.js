@@ -3,7 +3,8 @@ function SocialLink (props) {
 <>
 <a 
 href={props.href} 
-className="text-slate-500 hover:text-slate-200 duration-200 text-3xl m-3" 
+aria-label={props.label}
+className="text-slate-300 hover:text-slate-50 duration-200 text-3xl m-3" 
 target="_blank"
 rel="noreferrer">
     {props.children}
@@ -15,10 +16,10 @@ rel="noreferrer">
 export default function Socials () {
     return (
 <>
-<SocialLink href="https://github.com/JackChilds">
+<SocialLink href="https://github.com/JackChilds" label="GitHub">
     <i className="bi bi-github"></i>
 </SocialLink>
-<SocialLink href="https://dribbble.com/JackChilds">
+<SocialLink href="https://dribbble.com/JackChilds" label="Dribbble">
     <i className="bi bi-dribbble"></i>
 </SocialLink>
 </>
