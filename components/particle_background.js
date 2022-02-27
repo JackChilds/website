@@ -10,10 +10,10 @@ export default function ParticleBackground () {
   >
     <div className="font-extrabold text-gradient bg-gradient-to-r from-fuchsia-500 via-red-600 to-orange-400 animate-gradient-x">
 
-      <h1 className="text-2xl sm:text-4xl">
+      <h1 className="text-2xl sm:text-4xl text-gradient">
         Hi, I&apos;m Jack
       </h1>
-      <h2 className="text-md sm:text-xl mt-2">
+      <h2 className="text-md sm:text-xl mt-2 text-gradient">
         Scroll Down
       </h2>
 
