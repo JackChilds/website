@@ -1,7 +1,7 @@
 export default function ContactEmail() {
     // generates an encoded string and then at runtime a script decodes the string and displays the email address.
     // this is used in an effort to stop bots from reading the email address and sending spam emails.
-    const EMAIL = 'contact@example.com';
+    const EMAIL = 'contact@morcreate.com';
 
     const encodeEmail = (e) => {
         const b = Buffer.from(e).toString('base64');
@@ -12,6 +12,7 @@ export default function ContactEmail() {
         return res.join('-')
     }
 
+    // more settings for the contact email in the /public/scripts/main.js file
 
     return (
         <>

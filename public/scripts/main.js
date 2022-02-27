@@ -3,13 +3,10 @@
 
     const els = document.querySelectorAll('[data-emailaddress]');
 
-    // save the encoded data for later
-    let encoded = els[0].textContent;
-
     const decodeEmail = (e) => {
         const ascii = e.split('-')
-      let res = String.fromCharCode(...ascii)
-      return atob(res)
+        let res = String.fromCharCode(...ascii)
+        return atob(res)
     }
 
     // mailto subject text
