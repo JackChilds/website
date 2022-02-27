@@ -26,3 +26,8 @@ cd website
 npm install
 npm run dev
 ```
+or build for production:
+```
+npm run build
+npm run start
+```
