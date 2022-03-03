@@ -81,6 +81,13 @@ export default function Home() {
 <Script src="scripts/particles.min.js" strategy="beforeInteractive" />
 <Script src="scripts/particles_init.js" />
 <Script src="scripts/main.js" />
+
+{
+  /* Privacy friendly tracking code, uses https://counter.dev for analytics */ } 
+<Script strategy="afterInteractive"
+dangerouslySetInnerHTML={{
+  __html: `sessionStorage.getItem("_swa")||0===document.referrer.indexOf(location.protocol+"//"+location.host)||fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"jackchilds",utcoffset:"1"})),sessionStorage.setItem("_swa","1");`
+}} />
 </>
   )
 }
