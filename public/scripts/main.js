@@ -9,14 +9,11 @@
         return atob(res)
     }
 
-    // mailto subject text
-    const subject = 'I am interested in your work'
-
     window.setTimeout(() => {
         els.forEach (e => {
             const decoded = decodeEmail(e.getAttribute('data-emailaddress'))
             e.innerHTML = decoded
-            e.href = 'mailto:' + decoded + '?subject=' + subject
+            e.href = 'mailto:' + decoded + '?subject=' + e.getAttribute('data-subject')
 
         })
     }, params.delay)

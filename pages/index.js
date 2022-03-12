@@ -83,7 +83,8 @@ export default function Home() {
 <Script src="scripts/main.js" />
 
 {
-  /* Privacy friendly tracking code, uses https://counter.dev for analytics */ } 
+  /* Privacy friendly tracking code, uses https://counter.dev for analytics */ 
+} 
 <Script strategy="afterInteractive"
 id="analytics-script"
 dangerouslySetInnerHTML={{
