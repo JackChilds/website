@@ -2,7 +2,7 @@
 
 A minimal website made using next.js and tailwindcss.
 
-This is the open source code that powers [my website](https://morcreate.net).
+This is the open source code that powers [my website](https://jackchilds.tech).
 
 ## Deploy to DigitalOcean or Vercel
 [![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/JackChilds/website/tree/main&refcode=a78f5930de0a)
