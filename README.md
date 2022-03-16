@@ -1,6 +1,6 @@
 # my website
 
-A minimal website made using next.js and tailwindcss.
+My portfolio website made using next.js and tailwindcss.
 
 This is the open source code that powers [my website](https://jackchilds.tech).
 
