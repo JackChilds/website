@@ -22,7 +22,7 @@ export default function Socials () {
 <SocialLink href="https://dribbble.com/JackChilds" label="Dribbble">
     <i className="bi bi-dribbble"></i>
 </SocialLink>
-<SocialLink href="https://thefullstack.network/u/JackChilds" label="thefullstack">
+<SocialLink href="https://thefullstack.network/u/Jack" label="thefullstack">
 
 <svg width="32" height="32" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
     <g transform="matrix(84.2689,0,0,84.2689,-17136.8,-29062.6)">
