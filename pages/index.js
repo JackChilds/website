@@ -15,6 +15,7 @@ import ProjectCard from '../components/project_card.js'
 import ContactEmail from '../components/contact_email.js'
 import Copyright from '../components/copyright.js'
 import Analytics from '../components/analytics.js'
+import FooterLinks from '../components/footer_links.js'
 
 import 'animate.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -77,8 +78,10 @@ export default function Home() {
 
   <div className="px-8 mx-4 -mt-48">
     <p className="mt-64 flex justify-center">
-        <Socials />
+      <Socials />
     </p>
+
+    <FooterLinks/>
     
     <Copyright />
   </div>
