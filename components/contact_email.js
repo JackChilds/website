@@ -21,13 +21,11 @@ export default function ContactEmail() {
     // set the delay for the contact email in the /public/scripts/main.js file
 
     return (
-        <>
-            <a data-emailaddress={encodeEmail(EMAIL)} data-subject={SUBJECT}
-            className="hover:underline hover:text-gray-300">
-                <i className="text-gray-400">
-                    please wait...
-                </i>
-            </a>
-        </>
+        <a data-emailaddress={encodeEmail(EMAIL)} data-subject={SUBJECT}
+        className="hover:underline hover:text-gray-300">
+            <i className="text-gray-400">
+                please wait...
+            </i>
+        </a>
     )
 }
