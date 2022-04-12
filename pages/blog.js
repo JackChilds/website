@@ -32,20 +32,18 @@ export default function Blog({ allPostsData }) {
     <div>
         <h2>Blog Posts</h2>
 
-        <ul>
-            {allPostsData.map(({ id, date, title, description }) => (
-                <li className="my-1" key={id}>
-                    <a href={'posts/' + id}>
-                        <h4>{title}</h4>
-                    </a>
-                    <p className="-mt-1">
+        {allPostsData.map(({ id, date, title, description }) => (
+            <a href={'posts/' + id} className="no-underline my-2" key={id}>
+                <div className="px-3 py-4 rounded-xl hover:bg-rose-900 duration-300 group hover:-skew-y-3">
+                    <h4 className="mt-0 text-xl">{title}</h4>
+                    <p className="-mt-1 border-l-2 border-slate-400 pl-4 mb-0 group-hover:border-rose-400">
                         {description}
                         <br />
-                        <span className="font-light"><Date dateString={date} /></span>
+                        <span className="italic"><Date dateString={date} /></span>
                     </p>
-                </li>
-            ))}
-        </ul>
+                </div>
+            </a>
+        ))}
     </div>
 </div>
 
