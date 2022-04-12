@@ -9,7 +9,10 @@ function NavItem(props) {
     return (
 <>
 <button className={classNames} onClick={() => {
-    jump(props.href);
+    if (props.href.startsWith('#')) 
+        jump(props.href)
+    else 
+        window.location.href = window.location.origin + '/' + props.href
     window.location.hash = props.href.slice(1)
 }}>
     { props.text }
@@ -24,6 +27,7 @@ function NavEls(props) {
     <>
         <NavItem text="About" href="#about"  isMenu={props.isMenu} />
         <NavItem text="Projects" href="#projects" isMenu={props.isMenu} />
+        <NavItem text="Blog" href="blog" isMenu={props.isMenu} />
         <NavItem text="Contact" href="#contact" isMenu={props.isMenu} />
     </>
     )

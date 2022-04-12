@@ -9,6 +9,7 @@ import Socials from '../components/socials.js'
 import ProjectCard from '../components/project_card.js'
 import ContactEmail from '../components/contact_email.js'
 import Copyright from '../components/copyright.js'
+import Analytics from '../components/analytics.js'
 
 import 'animate.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -82,14 +83,7 @@ export default function Home() {
 <Script src="scripts/particles_init.js" />
 <Script src="scripts/main.js" />
 
-{
-  /* Privacy friendly tracking code, uses https://counter.dev for analytics */ 
-} 
-<Script strategy="afterInteractive"
-id="analytics-script"
-dangerouslySetInnerHTML={{
-  __html: `sessionStorage.getItem("_swa")||0===document.referrer.indexOf(location.protocol+"//"+location.host)||fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"jackchilds",utcoffset:"1"})),sessionStorage.setItem("_swa","1");`
-}} />
+<Analytics />
 </>
   )
 }
