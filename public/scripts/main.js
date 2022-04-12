@@ -14,7 +14,6 @@
             const decoded = decodeEmail(e.getAttribute('data-emailaddress'))
             e.innerHTML = decoded
             e.href = 'mailto:' + decoded + '?subject=' + e.getAttribute('data-subject')
-
         })
     }, params.delay)
 
