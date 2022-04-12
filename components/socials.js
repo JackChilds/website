@@ -1,3 +1,8 @@
+/*
+* Jack Childs 2022
+* MIT License
+*/
+
 function SocialLink (props) {
     return (
 <>

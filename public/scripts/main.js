@@ -1,3 +1,8 @@
+/*
+* Jack Childs 2022
+* MIT License
+*/
+
 // decode the encoded emails now
 (function (params) {
 

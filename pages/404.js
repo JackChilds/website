@@ -1,3 +1,8 @@
+/*
+* Jack Childs 2022
+* MIT License
+*/
+
 import Link from 'next/link'
 
 export default function NotFound() {

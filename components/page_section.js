@@ -1,3 +1,8 @@
+/*
+* Jack Childs 2022
+* MIT License
+*/
+
 export default function PageSection (props) {
     return (
 <section className="mt-16 font-mono text-xl w-full flex-none relative py-64 px-4" id={ props.name.toLowerCase() }>

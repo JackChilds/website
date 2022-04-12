@@ -1,3 +1,8 @@
+/*
+* Jack Childs 2022
+* MIT License
+*/
+
 import React from 'react'
 import Head from 'next/head'
 import Script from 'next/script'

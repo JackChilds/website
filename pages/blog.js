@@ -1,3 +1,8 @@
+/*
+* Jack Childs 2022
+* MIT License
+*/
+
 import Head from 'next/head'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 

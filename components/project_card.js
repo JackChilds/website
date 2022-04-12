@@ -1,3 +1,8 @@
+/*
+* Jack Childs 2022
+* MIT License
+*/
+
 export default function ProjectCard (props) {
     return (
         <div className="p-6 m-3 relative cursor-pointer hover:text-base-300 hover:-translate-y-2 text-white duration-300 group">

@@ -1,3 +1,8 @@
+/*
+* Jack Childs 2022
+* MIT License
+*/
+
 import { Utterances } from 'utterances-react-component'
 import Head from 'next/head'
 import 'highlight.js/styles/github-dark.css';

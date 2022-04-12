@@ -1,3 +1,8 @@
+/*
+* Jack Childs 2022
+* MIT License
+*/
+
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
 import Layout from '../../components/post_layout'

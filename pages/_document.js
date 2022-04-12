@@ -1,3 +1,8 @@
+/*
+* Jack Childs 2022
+* MIT License
+*/
+
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document () {

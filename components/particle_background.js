@@ -1,3 +1,8 @@
+/*
+* Jack Childs 2022
+* MIT License
+*/
+
 import jump from 'jump.js'
 export default function ParticleBackground () {
     return (

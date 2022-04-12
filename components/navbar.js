@@ -1,3 +1,8 @@
+/*
+* Jack Childs 2022
+* MIT License
+*/
+
 import React, { Component } from 'react';
 import jump from 'jump.js'
 

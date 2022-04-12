@@ -1,3 +1,8 @@
+/*
+* Jack Childs 2022
+* MIT License
+*/
+
 (function () {
     function initialise_particles (t) {
         // if the particles.js library is not loaded, wait an extra second to see if that helps
