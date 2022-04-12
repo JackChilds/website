@@ -5,7 +5,7 @@ export default function Document () {
         <Html lang="en" dir="ltr">
             <Head>
                 <meta name="theme-color" content="hsl(223, 14%, 10%)" />
-                <meta name="description" content="Jack Childs. A 15 year old, full stack developer from the UK." />
+                <meta name="description" content="Jack Childs. I'm a 15 year old, self-taught programmer and high school student from the UK." />
             </Head>
             <body className="font-mono">
                 <Main />
