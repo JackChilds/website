@@ -33,6 +33,7 @@ or build for production:
 npm run build
 npm run start
 ```
+**Note:** to run the production build on port 3000, use `npm run start-pp` instead.
 
 ## License
 Copyright Jack Childs 2022
