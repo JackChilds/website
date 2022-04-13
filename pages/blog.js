@@ -34,7 +34,7 @@ export default function Blog({ allPostsData }) {
 
         {allPostsData.map(({ id, date, title, description }) => (
             <a href={'posts/' + id} className="no-underline my-2" key={id}>
-                <div className="px-3 py-4 rounded-xl hover:bg-rose-900 duration-300 group hover:-skew-y-3">
+                <div className="px-3 py-4 rounded-xl hover:bg-rose-900 duration-300 group hover:-skew-y-2">
                     <h4 className="mt-0 text-xl">{title}</h4>
                     <p className="-mt-1 border-l-2 border-slate-400 pl-4 mb-0 group-hover:border-rose-400">
                         {description}

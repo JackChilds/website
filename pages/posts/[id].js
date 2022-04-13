@@ -19,7 +19,7 @@ export default function Post ({ postData }) {
 </Head>
 <Layout>
 
-<p className="my-2 text-sm">
+<p className="my-4 text-sm">
     <span className="font-bold"><Date dateString={postData.date} /></span>
     <br />
     <span className="italic">By Jack Childs</span>
