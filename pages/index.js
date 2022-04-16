@@ -71,7 +71,7 @@ export default function Home() {
 
   <Section name="Contact">
     <p className="text-center">
-      Reach out to me: <ContactEmail />.
+      Reach out to me: <ContactEmail email="contact@jackchilds.tech" subject="I am interested in your work" delay="3000" />.
     </p>
 
   </Section>
@@ -89,7 +89,6 @@ export default function Home() {
 
 <Script src="scripts/particles.min.js" strategy="beforeInteractive" />
 <Script src="scripts/particles_init.js" />
-<Script src="scripts/main.js" />
 
 <Analytics />
 </>
