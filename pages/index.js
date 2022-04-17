@@ -20,7 +20,7 @@ import FooterLinks from '../components/footer_links.js'
 import 'animate.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-export default function Home() {
+export default function Home({ encodedEmail, emailKey }) {
   return ( 
 <>
 <div className="animate__animated animate__fadeIn">
@@ -71,7 +71,7 @@ export default function Home() {
 
   <Section name="Contact">
     <p className="text-center">
-      Reach out to me: <ContactEmail subject="I am interested in your work" delay="3000" />.
+      Reach out to me: <ContactEmail encodedEmail={encodedEmail} emailKey={emailKey} subject="I am interested in your work" delay="3000" />.
     </p>
 
   </Section>
@@ -93,4 +93,21 @@ export default function Home() {
 <Analytics />
 </>
   )
+}
+
+
+import { DataProtect } from 'data-protect'
+export async function getStaticProps () {
+  const key = ((Math.random() + 1).toString(36).substring(2,9)) + ((Math.random() + 1).toString(36).substring(2,9));
+
+  return {
+      props: {
+          encodedEmail: DataProtect.encodeData ("contact@jackchilds.tech", {
+            key: key,
+            x: 8,
+            delimiter: ' '
+          }),
+          emailKey: key
+      }
+  }
 }
