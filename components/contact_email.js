@@ -12,11 +12,12 @@ export default class ContactEmail extends React.Component {
         super(props)
         this.placeholder = 'loading...'
         this.options = {
-            key: 'aejfpwj3sc' // a random string for the encryption and decryption process
+            key: ((Math.random() + 1).toString(36).substring(2,9)) + ((Math.random() + 1).toString(36).substring(2,9))// a random string for the encryption and decryption process
         }
 
         this.state = {
-            encoded: DataProtect.encodeData(this.props.email, this.options),
+            // encode the email and store in a variable
+            encoded: DataProtect.encodeData ("contact@jackchilds.tech", this.options),
             email: this.placeholder
         }
     }

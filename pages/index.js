@@ -71,7 +71,7 @@ export default function Home() {
 
   <Section name="Contact">
     <p className="text-center">
-      Reach out to me: <ContactEmail email="contact@jackchilds.tech" subject="I am interested in your work" delay="3000" />.
+      Reach out to me: <ContactEmail subject="I am interested in your work" delay="3000" />.
     </p>
 
   </Section>
