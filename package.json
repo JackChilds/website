@@ -13,7 +13,7 @@
     "lint": "next lint"
   },
   "engines" : {
-    "node": "15.x"
+    "node": "16.x"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
