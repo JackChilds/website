@@ -41,34 +41,6 @@ For example, here's what an encoded email address might look like:
 ```
 As you can see, you can't just straight up read the email address.
 
-We can then build the encoding into a React component like this:
-```js
-export default function ContactEmail() {
-    const EMAIL = 'someone@example.com';
-    const SUBJECT = 'I am interested in your work'
-
-    const encodeEmail = (e) => {
-        const b = Buffer.from(e).toString('base64');
-        let res = [];
-        for (let i = 0; i < b.length; i++) {
-            res[i] = b.charCodeAt(i).toString();
-        } 
-        return res.join('-')
-    }
-
-    return (
-        <a data-emailaddress={encodeEmail(EMAIL)} data-subject={SUBJECT}
-        className="hover:underline hover:text-gray-300">
-            <i className="text-gray-400">
-                please wait...
-            </i>
-        </a>
-    )
-}
-```
-[View the file on GitHub](https://github.com/JackChilds/website/blob/eb6919cba25e25374a398f468f0b81594591652b/components/contact_email.js).
-
-
 ### Part 2: Decoding
 Decoding the email address is just as easy. In the case of my website, I just use a simple script that looks for all email address links and decodes them after a set amount of time.
 
@@ -80,31 +52,85 @@ const decodeEmail = (e) => {
     return atob(res)
 }
 ```
-And then this code can be used to decode all email links on the page:
-```js
-(function (params) {
-    const els = document.querySelectorAll('[data-emailaddress]');
+But, to save time and effort for you, I have simplified the process and created a small npm package called `data-protect`. The next part of this article will be on using this package in a Next.js environment.
 
-    const decodeEmail = (e) => {
-        const ascii = e.split('-')
-        let res = String.fromCharCode(...ascii)
-        return atob(res)
+## Using the data-protect package to encode and decode data
+First, install the [data-protect package](https://www.npmjs.com/package/data-protect):
+```sh
+npm i data-protect
+```
+Here is an example component that I use on my website for the encoding and decoding of the email address:
+```js
+import React from 'react';
+
+import { DataProtect } from 'data-protect'
+
+export default class ContactEmail extends React.Component {
+    constructor(props) {
+        super(props)
+        this.placeholder = 'loading...'
+
+        // ensure that these options match those found at the bottom of the page that this component is imported from
+        this.options = {
+            key: props.emailKey,
+            x: 8,
+            delimiter: ' '
+        }
+
+        this.state = {
+            email: this.placeholder
+        }
     }
 
-    window.setTimeout(() => {
-        els.forEach (e => {
-            const decoded = decodeEmail(e.getAttribute('data-emailaddress'))
-            e.innerHTML = decoded
-            e.href = 'mailto:' + decoded + '?subject=' + e.getAttribute('data-subject')
-        })
-    }, params.delay)
+    componentDidMount() {
+        this.delayTimer = setTimeout(() => {
+            this.setState({
+                email: DataProtect.decodeData(this.props.encodedEmail, this.options)
+            })
+        }, this.props.delay)
+    }
 
-})({
-    delay: 3000
-})
+    componentWillUnmount() {
+        clearTimeout(this.delayTimer)
+    }
+
+    render() {
+        // generates an encoded string and then at runtime a script decodes the string and displays the email address.
+        // this is used in an effort to stop bots from reading the email address and sending spam emails.
+        return (
+            <a href={this.state.email === this.placeholder ? '#' : `mailto:${this.state.email}?subject=${this.props.subject}`}
+            className="hover:underline hover:text-gray-300">
+                { this.state.email }
+            </a>
+        )
+    }
+}
 ```
-The delay can be changed but don't make it too long as your users don't want to wait a long time.
-[View the file on GitHub](https://github.com/JackChilds/website/blob/eb6919cba25e25374a398f468f0b81594591652b/public/scripts/main.js).
+The component can then be used like this:
+```xml
+<ContactEmail encodedEmail={encodedEmail} emailKey={emailKey} subject="I am interested in your work" delay="3000" />
+```
+With the `encodeEmail` and `emailKey` variables being passed in from a `getStaticProps` function. This is needed so that the email is encoded at build time and does not appear in raw form in the output code.
+```js
+import {
+    DataProtect
+} from 'data-protect'
+export async function getStaticProps() {
+    // a random string
+    const key = ((Math.random() + 1).toString(36).substring(2, 9)) + ((Math.random() + 1).toString(36).substring(2, 9));
+
+    return {
+        props: {
+            encodedEmail: DataProtect.encodeData("example@example.com", {
+                key: key,
+                x: 8,
+                delimiter: ' '
+            }),
+            emailKey: key
+        }
+    }
+}
+```
 
 ## The result
 <video muted autoplay controls>
