@@ -32,7 +32,7 @@ video {
         </a>
     </p>
 
-    <article className="prose">{children}</article>
+    <article className="prose text-slate-400">{children}</article>
 
     <h2 className="mt-20 mb-2 text-2xl">Comment below 👇</h2>
     <div className="max-w-prose">
