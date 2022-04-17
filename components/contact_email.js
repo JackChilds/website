@@ -11,12 +11,16 @@ export default class ContactEmail extends React.Component {
     constructor(props) {
         super(props)
         this.placeholder = 'loading...'
+
+
+        // ensure that these options match those found at the bottom of the page that this component is imported from
         this.options = {
-            key: 'aejfpwj3sc' // a random string for the encryption and decryption process
+            key: props.emailKey,
+            x: 8,
+            delimiter: ' '
         }
 
         this.state = {
-            encoded: DataProtect.encodeData(this.props.email, this.options),
             email: this.placeholder
         }
     }
@@ -24,7 +28,7 @@ export default class ContactEmail extends React.Component {
     componentDidMount() {
         this.delayTimer = setTimeout(() => {
             this.setState({
-                email: DataProtect.decodeData(this.state.encoded, this.options)
+                email: DataProtect.decodeData(this.props.encodedEmail, this.options)
             })
         }, this.props.delay)
     }
