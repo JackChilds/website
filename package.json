@@ -4,7 +4,6 @@
   "description": "A minimal website made using next.js and tailwindcss.",
   "author": "Jack Childs (https://github.com/JackChilds)",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
