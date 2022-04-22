@@ -17,7 +17,7 @@ Of course it is impossible to stop real humans from sending you spam mail, witho
 - CAPTCHA type activities which completely destroy the UX
 - and honeypot methods that sometimes work, but don't completely work especially as bots get smarter and smarter
   
-So instead I built a solution that works well for me: encode the email address on the server, and decode it client side after a period of time.
+So instead I built a solution that works well for me: encode the email address on the server, and decode it client side after a period of time, the benefit being that unless the bot runs the JavaScript code, **and** waits for the delay, they won't be able to scrape the email address. And of course the email address is also hidden from all the source code including all the JS files.
 
 ## The code
 There are two parts to this method, first is the encoding of the email address and second is the decoding. 
