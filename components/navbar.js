@@ -94,16 +94,25 @@ class DropdownMenu extends Component {
 }
 
 export default function Navbar() {
+    function openPureForms() {
+        window.location.href = 'https://pureforms.net'
+    }
+
     return (
-<div className="navbar bg-base-300 border-b-2 border-base-200 p-8 mb-8 flex justify-around animate__animated animate__fadeInDown fixed top-0 left-0 z-999">
-    <h1 className="text-2xl font-mono text-base-content">Jack Childs</h1>
-
-    <div className="md:hidden">
-        <DropdownMenu />
+<div className="fixed top-0 left-0 z-999 animate__animated animate__fadeInDown w-full">
+    <div className="px-4 py-2 font-sans bg-[#2ACBA1] text-black cursor-pointer" onClick={openPureForms}>
+        Check out PureForms! Forms but better. Get ready for launch! 🚀🚀🚀
     </div>
+    <div className="navbar bg-base-300 border-b-2 border-base-200 p-8 mb-8 flex justify-around">
+        <h1 className="text-2xl font-mono text-base-content">Jack Childs</h1>
 
-    <div className="hidden md:block">
-        <NavEls isMenu={false} />
+        <div className="md:hidden">
+            <DropdownMenu />
+        </div>
+
+        <div className="hidden md:block">
+            <NavEls isMenu={false} />
+        </div>
     </div>
 </div>
     )
