@@ -52,6 +52,9 @@ export default function Home({ encodedEmail, emailKey }) {
       Here are some of my projects that I have worked on. To view them all, please refer to <a href="https://github.com/JackChilds" className="hover:underline" target="_blank" rel="noreferrer">my GitHub page</a>.
     </p>
     <div className="pt-8">
+      <ProjectCard projectName="Data Protect" href="https://github.com/JackChilds/Data-Protect">
+        Protect data such as email addresses from spam bots on your website.
+      </ProjectCard>
       <ProjectCard projectName="Mock API" href="https://github.com/JackChilds/Mock-API">
         Quickly create Mock API responses and deploy them to Vercel.
       </ProjectCard>
