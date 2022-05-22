@@ -134,7 +134,7 @@ export async function getStaticProps() {
 
 ## The result
 <video muted autoplay controls>
-    <source src="/assets/posts/reducing_spam_from_mailto_links/result.mp4" type="video/mp4" />
+    <source src="$assets/result.mp4" type="video/mp4" />
     Unable to show video of result
 </video>
 

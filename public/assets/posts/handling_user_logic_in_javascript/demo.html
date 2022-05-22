@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running unknown code demo</title>
+
+    <style>
+        * {
+            font-family: Arial;
+            color: #000
+        }
+        input, button {
+            padding: 6px
+        }
+    </style>
+</head>
+<body>
+    <h1>Running unknown code demo</h1>
+    <p>
+        This demo uses alert as well as console.log so check out the console for output. Try leaving the alert for 10 seconds before dismissing it, you will see an error message in the console saying that the code has timed out after 10 seconds.
+        <br>
+        <a href="/posts/handling_user_logic_in_javascript">Back to the blog post</a>
+    </p>
+
+    <p>
+        Use the buttons to change the 'age' prop.
+    </p>
+    <p>
+        <button onclick="updateAge(-1)">-</button>
+        <span id="age">12</span>
+        <button onclick="updateAge(1)">+</button>
+    </p>
+
+
+    <!-- Babel (used for transpiling), ideally this would be done on the server -->
+    <script src="https://unpkg.com/@babel/standalone@7.17.11/babel.min.js"></script>
+
+
+    <!-- This is the JS interpreter -->
+    <script src="https://cdn.jsdelivr.net/gh/NeilFraser/JS-Interpreter@master/acorn_interpreter.js"></script>
+
+    <script>
+        // a function 'job' that user can create
+        function doSomeLogic ({ age, minAge }) {
+            if (age >= minAge) {
+                console.log ('Old enough')
+                alert ('Old enough')
+            } else {
+                console.log ("Too young!")
+                alert ('Too young')
+            }
+        }
+
+        const block = {
+            after: {
+                func: doSomeLogic,
+                props: {
+                    age: 12,
+                    minAge: 13
+                }
+            }
+        }
+
+        function processCode (func, props) {
+            // by assigning the function to a variable,
+            // it can be called later in the code without
+            // the user having to specify the function name
+            // or by creating a fancy RegEx.
+            let code = "var __f = " + func
+
+            // stringify the props object so that it can
+            // be passed to the function
+            props = JSON.stringify(props)
+
+            // the JS-Interpreter library only supports es2015,
+            // for es6 and above features, Babel can be used to
+            // transpile code. This bit should be done server-side 
+            // though because Babel is a (very) large library.
+            code = Babel.transform(code, {
+                presets: ['es2015']
+            }).code + " __f(JSON.parse('" + props + "'));"
+
+            return code
+        }
+
+        function runCode(code) {
+            function initFuncs(interpreter, scope) {
+                const consoleWrapper = {
+                    log: window.console.log.bind(window.console, '%s'),
+                    error: window.console.error.bind(window.console, '%s'),
+                    info: window.console.info.bind(window.console, '%s'),
+                    warn: window.console.warn.bind(window.console, '%s')
+                }
+                // give access to part of the console
+                interpreter.setProperty(scope, 'console', interpreter.nativeToPseudo(
+                    consoleWrapper))
+
+                // also give access to the alert property, so that the user can see the output
+                const alertWrapper = (text) => window.alert(text)
+
+                interpreter.setProperty(scope, 'alert',
+                    interpreter.createNativeFunction(alertWrapper))
+            }
+
+            const interpreter = new Interpreter(code, initFuncs)
+
+            // to protect against infinite loops and memory bombs, the code is run step by step and stopped after 10 seconds.
+            function nextStep(i, startTime) {
+                if (Date.now() - startTime > 10000) {
+                    console.error(`Code execution timed out after 10 seconds and ${i} steps.`)
+                    return
+                }
+
+                if (interpreter.step())
+                    window.setTimeout(() => {
+                        nextStep(i + 1, startTime)
+                    }, 0)
+                else
+                    console.log(`Code execution finished in ${i} steps and took ${Date.now() - startTime} ms.`)
+            }
+            nextStep(0, Date.now())
+        }
+
+
+
+
+        function updateAge (amount) {
+            block.after.props.age += amount; 
+            document.querySelector('#age').textContent = block.after.props.age;
+
+            runCode(
+                processCode (
+                    block.after.func,
+                    block.after.props
+                )
+            )
+        }
+    </script>
+</body>
+</html>
