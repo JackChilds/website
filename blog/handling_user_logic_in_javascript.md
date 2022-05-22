@@ -1,7 +1,7 @@
 ---
 title: "Handling user logic in javascript"
 date: "2022-05-22"
-description: "Running unknown code safely on a user's device"
+description: "How I handle user-created logic and run it safely on the client"
 ---
 
 # Handling user logic in javascript
