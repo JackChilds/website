@@ -157,4 +157,4 @@ Yes, this method is slow (around 200x slower than JS) but for small amounts of l
 
 I hope you this post is helpful to you, comment and let me know what you think!
 
-Want something else to read, check out [this post from back in April](reducing_spam_from_mailto_links). To keep up with this blog (I post about once a month) then [follow me on GitHub](https://github.com/JackChilds).
+Want something else to read, check out [this post from back in April](reducing_spam_from_mailto_links). To keep up with my work [follow me on GitHub](https://github.com/JackChilds).
