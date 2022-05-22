@@ -156,3 +156,5 @@ To conclude, by letting users (and developers) create logic with JS, it drastica
 Yes, this method is slow (around 200x slower than JS) but for small amounts of logic it really isn't an issue. But what's more important is that the logic can be safely executed on users' devices.
 
 I hope you this post is helpful to you, comment and let me know what you think!
+
+Want something else to read, check out [this post from back in April](reducing_spam_from_mailto_links). To keep up with this blog (I post about once a month) then [follow me on GitHub](https://github.com/JackChilds).
