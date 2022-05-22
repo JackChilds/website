@@ -16,6 +16,7 @@ export default function Post ({ postData }) {
 <Head>
     <title>{postData.title}</title>
     <meta name="description" content={postData.description} />
+    <meta name="author" content="Jack Childs" />
 </Head>
 <Layout>
 
