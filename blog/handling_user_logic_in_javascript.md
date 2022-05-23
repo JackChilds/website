@@ -8,7 +8,7 @@ description: "How I handle user-created logic and run it safely on the client"
 a  braindump and devlog (sort of)
 
 ## Introduction
-I am currently working on a startup idea called PureForms with a goal of creating an intuitive way for both developers and non-technical users to create forms with advanced (but clear) logic, all for a low price. You can add yourself to the waitlist by entering your email on our website: [pureforms.net](pureforms.net).
+I am currently working on a startup idea called PureForms with a goal of creating an intuitive way for both developers and non-technical users to create forms with advanced (but clear) logic, all for a low price. You can add yourself to the waitlist by entering your email on our website: [pureforms.net](https://pureforms.net).
 
 Throughout the planning and design stages of the product, we (me and a [friend](https://about.v-thomas.me/)) decided that we wanted to handle user logic in a similar way to that of Excel's or Google Sheet's – the user writes some logic in code that determines an action taken by the application.
 
