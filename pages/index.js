@@ -40,7 +40,7 @@ export default function Home({ encodedEmail, emailKey }) {
         Hey there <span className="waving-hand">👋</span>
       </h3>
       <p>
-        I&apos;m a 15 year old, self-taught programmer and a high school student from the UK. I make stuff.
+        I&apos;m a 16 year old, self-taught programmer and a high school student from the UK. I make stuff.
       </p>
     </Section>
   </div>
